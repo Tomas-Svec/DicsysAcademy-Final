@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-modificar',
   standalone: true,
-  imports: [FormsModule,CommonModule,HeaderComponent, FooterComponent, NgFor],
+  imports: [FormsModule, CommonModule, HeaderComponent, FooterComponent, NgFor],
   templateUrl: './modificar.component.html',
   styleUrl: './modificar.component.css'
 })
@@ -26,16 +26,16 @@ export class ModificarComponent {
   stockProducto: any;
 
 
-  constructor (
+  constructor(
     public urlNavigateSerice: UrlNavigateService,
     public globalText: GlobalText,
-    public router:Router,
+    public router: Router,
     public serviceProduct: ProductosService
-  ){
+  ) {
     const navegabilidad = this.router.getCurrentNavigation();
-    if (navegabilidad && navegabilidad.extras && navegabilidad.extras.state){
+    if (navegabilidad && navegabilidad.extras && navegabilidad.extras.state) {
       const data = navegabilidad.extras.state;
-      
+
       this.idCategoria = data['idCategoria'];
       this.idProducto = data['idProducto'];
       this.nombreProducto = data['nombreProducto'];
@@ -48,11 +48,11 @@ export class ModificarComponent {
     this.serviceProduct.getProductoById(this.idCategoria).subscribe((result) => {
       this.listProdByCategoria = result;
     });
-    
+
   }
 
 
-  
+
   editarProducto(idCategoria: any): void {
     console.log('Producto enviado para modificar:', idCategoria); // Verificando el objeto
     const datosProducto = {
@@ -61,7 +61,7 @@ export class ModificarComponent {
       precio: idCategoria.precio,
       stock: idCategoria.stock,
     };
-  
+
     // Llamada al servicio para modificar el producto
     this.serviceProduct.modificarProducto(idCategoria.id, datosProducto).subscribe(
       () => {
@@ -70,9 +70,9 @@ export class ModificarComponent {
             state: {
               idCategoria: this.idCategoria,
               nombreCategoria: this.nombreCategoria,
-              
+
             },
-            
+
           });
           console.log('Nombre de la categoría enviado:', this.nombreProducto);
         }, 200); // Retraso para animación
@@ -82,6 +82,6 @@ export class ModificarComponent {
       }
     );
   }
-  
+
 
 }

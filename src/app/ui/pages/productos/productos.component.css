@@ -20,11 +20,11 @@
 }
 
 .item-prod {
-  width: 350px; 
+  width: 350px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; 
+  margin: 20px auto;
   padding: 15px;
   background-color: #fff;
   text-align: center;
@@ -56,7 +56,9 @@ h2 {
   text-align: center;
 }
 
-.cont-spanProd, .precio-prod, .stock-prod {
+.cont-spanProd,
+.precio-prod,
+.stock-prod {
   margin: 5px 0;
   font-size: 1em;
   color: #555;
@@ -74,15 +76,15 @@ h2 {
 
 .button {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  gap: 15px; 
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   margin-top: 15px;
 }
 
 button {
-  width: 120px; 
-  height: 50px; 
+  width: 120px;
+  height: 50px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -92,7 +94,7 @@ button {
 }
 
 button:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 .button-eliminar {
@@ -109,7 +111,7 @@ button:hover {
 
 
 .button-agregar {
-  background-color: #6941da; 
+  background-color: #6941da;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -120,8 +122,8 @@ button:hover {
 }
 
 .button-agregar:hover {
-  background-color: #5132a5; 
-  transform: scale(1.05); 
+  background-color: #5132a5;
+  transform: scale(1.05);
 }
 
 
@@ -143,6 +145,6 @@ button:hover {
 #listProductos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
-  gap: 20px; 
+  justify-content: center;
+  gap: 20px;
 }

@@ -22,21 +22,19 @@
             <h3>{{categoria.nombre}}</h3>
 
             <div class="button-group">
-        <button (click)="navigateToProducts(categoria)">
-          {{globalText.SeeProducts}}
-        </button>
-        <!-- Botón de eliminar -->
-        <button (click)="eliminarCategoria(categoria.id)" class="btn-eliminar">
-          {{globalText.deleteCategory}}
-        </button>
-           
+              <button (click)="navigateToProducts(categoria)">
+                {{globalText.SeeProducts}}
+              </button>
+              <button (click)="eliminarCategoria(categoria.id)" class="btn-eliminar">
+                {{globalText.deleteCategory}}
+              </button>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<p>:</p>
-<app-footer></app-footer>
-
+  <p>:</p>
+  <app-footer></app-footer>

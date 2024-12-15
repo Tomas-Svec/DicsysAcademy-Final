@@ -1,48 +1,26 @@
 <app-header></app-header>
-
 <div class="center">
   <div id="contenido" class="content">
     <div class="productos">
       <h1>{{ 'Producto: ' + nombreProducto }}</h1>
 
       <div *ngFor="let producto of listProdByCategoria" class="producto-card">
-        <!-- Mostrar y editar los campos -->
+
         <label for="nombre">{{globalText.name + ':'}}</label>
-        <input
-          id="nombre"
-          [(ngModel)]="producto.nombre"
-          placeholder="Nuevo nombre"
-          class="input-field"
-        />
+        <input id="nombre" [(ngModel)]="producto.nombre" placeholder="Nuevo nombre" class="input-field" />
 
         <label for="descripcion">{{globalText.description + ':'}}</label>
-        <input
-          id="descripcion"
-          [(ngModel)]="producto.descripcion"
-          placeholder="Nueva descripción"
-          class="input-field"
-        />
+        <input id="descripcion" [(ngModel)]="producto.descripcion" placeholder="Nueva descripción"
+          class="input-field" />
 
         <label for="precio">{{globalText.price + ':'}}</label>
-        <input
-          id="precio"
-          [(ngModel)]="producto.precio"
-          type="number"
-          step="0.01"
-          placeholder="Nuevo precio"
-          class="input-field"
-        />
+        <input id="precio" [(ngModel)]="producto.precio" type="number" step="0.01" placeholder="Nuevo precio"
+          class="input-field" />
 
         <label for="stock">{{globalText.stock + ':'}}</label>
-        <input
-          id="stock"
-          [(ngModel)]="producto.stock"
-          type="number"
-          placeholder="Nuevo stock"
-          class="input-field"
-        />
+        <input id="stock" [(ngModel)]="producto.stock" type="number" placeholder="Nuevo stock" class="input-field" />
 
-        <!-- Botón para guardar cambios -->
+
         <button (click)="editarProducto(producto)" class="save-button">
           {{globalText.saveChanges}}
         </button>
@@ -50,5 +28,4 @@
     </div>
   </div>
 </div>
-<p></p>
 <app-footer></app-footer>

@@ -16,19 +16,19 @@ import { catchError, of } from 'rxjs';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,HeaderComponent, SliderComponent, FooterComponent, NgFor],
+  imports: [CommonModule, HeaderComponent, SliderComponent, FooterComponent, NgFor],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent{
+export class HomeComponent {
 
   arrayCategorias: any[] = []; // Especifica que es un arreglo
-  errorMessage: string = ''; 
+  errorMessage: string = '';
   idCategoria: any;
   descripcion: any;
 
-  constructor (
-    public urlNavigateSerice: UrlNavigateService, 
+  constructor(
+    public urlNavigateSerice: UrlNavigateService,
     public globalText: GlobalText,
     public globalurl: Globalurl,
     public categoriasService: CategoriasService,
@@ -41,7 +41,6 @@ export class HomeComponent{
   cargarCategorias(): void {
     this.categoriasService.getCategorias().pipe(
       catchError((error) => {
-        // Manejo del error
         this.errorMessage = 'No hay categorías disponibles o la base de datos no está disponible.';
         return of([]);
       })
@@ -84,45 +83,5 @@ export class HomeComponent{
       );
     }
   }
-  
+
 }
-
-
-  /* !!-CODIGO QUE FUNCIONA-!!
-  arrayCategorias: any;
-  errorMessage: string = ''; 
-  idCategoria: any;
-
-  constructor (
-    public urlNavigateSerice: UrlNavigateService, 
-    public globalText: GlobalText,
-    public globalurl: Globalurl,
-    public categoriasService: CategoriasService
-   ){
-
-    this.categoriasService.getCategorias().subscribe((result) => {
-      this.arrayCategorias = result;
-    });
-    
-    }
-  
-    navigateToProducts(categorias: any ) {
-      this.urlNavigateSerice.navigateToUrlWithData(this.globalurl.products, {
-          state: {
-            
-              idCategoria: categorias.id, //saco de la query
-              nombreCategoria: categorias.nombre
-              
-          },
-      });
-  }
-}
-*/
-
-/*
-  //FUERA DEL CONSTRUCTOR
-  navigateToUrlWithData(){
-    this.urlNavigateSerice.navigateToUrlWithData(this.globalurl.products, {
-      state: { arrayCategorias: this.arrayCategorias }
-    });
-*/

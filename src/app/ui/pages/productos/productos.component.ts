@@ -15,12 +15,12 @@ import { CarritoserviceService } from '../../../data/services/carrito/carritoser
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [CommonModule,HeaderComponent, FooterComponent, NgFor],
+  imports: [CommonModule, HeaderComponent, FooterComponent, NgFor],
   templateUrl: './productos.component.html',
-  styleUrl  : './productos.component.css'
+  styleUrl: './productos.component.css'
 })
 
-export class ProductosComponent{
+export class ProductosComponent {
 
   listProdByCategoria: any[] = [];
   errorMessage: string = ''; // Variable para el mensaje de error
@@ -42,7 +42,7 @@ export class ProductosComponent{
       const data = navegabilidad.extras.state;
       this.idCategoria = data['idCategoria'];
       this.nombreCategoria = data['nombreCategoria'];
-      
+
     }
 
     // Obtener productos por categoría
@@ -64,11 +64,11 @@ export class ProductosComponent{
     const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
     if (confirmacion) {
       this.serviceProduct.eliminarProducto(idProducto).subscribe(() => {
-        location.reload(); 
+        location.reload();
       });
     }
   }
-  
+
 
   navigateModificar(productos: any) {
     this.urlNavigateService.navigateToUrlWithData(this.globalUrl.modificar, {
@@ -89,7 +89,7 @@ export class ProductosComponent{
       state: {
         idCategoria: this.idCategoria,
       },
-      
+
     });
     console.log(this.idCategoria);
   }
@@ -104,44 +104,3 @@ export class ProductosComponent{
 
 
 
- 
-
-  /* -CODIGO QUE SI FUNCIONA-
-  listProdByCategoria: any;
-  public idCategoria; 
-  public nombreCategoria: any;
-  
-
-
-  constructor (
-    public urlNavigateSerice: UrlNavigateService,
-    public globalText: GlobalText,
-    public router:Router,
-    public serviceProduct: ProductosService
-  ){
-    const navegabilidad = this.router.getCurrentNavigation();
-
-    if (navegabilidad && navegabilidad.extras && navegabilidad.extras.state){
-      const data = navegabilidad.extras.state;
-      this.idCategoria = data['idCategoria'];
-      this.nombreCategoria = data['nombreCategoria'];
-    }
-
-    this.serviceProduct.getProductoById(this.idCategoria).subscribe((result) =>{
-      
-      
-      this.listProdByCategoria=result;
-      
-      
-    })
-
-  }
-
-
-  eliminarProducto(idProducto: any){
-  this.serviceProduct.eliminarProducto(idProducto).subscribe((result)=>{
-    location.reload()
-  })
-}
-}
-*/

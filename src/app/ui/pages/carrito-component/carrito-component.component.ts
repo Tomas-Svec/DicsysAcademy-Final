@@ -21,14 +21,14 @@ export class CarritoComponentComponent implements OnInit {
   constructor(
     private carritoService: CarritoserviceService,
     public urlNavigateSerice: UrlNavigateService,
-      public globalText: GlobalText,
-      public router:Router,
-  ){
-     // Cargar los productos desde localStorage al cargar el componente
-     const carritoGuardado = localStorage.getItem('carrito');
-     if (carritoGuardado) {
-       this.productosEnCarrito = JSON.parse(carritoGuardado);
-      }
+    public globalText: GlobalText,
+    public router: Router,
+  ) {
+    // Cargar los productos desde localStorage al cargar el componente
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+      this.productosEnCarrito = JSON.parse(carritoGuardado);
+    }
   }
 
   ngOnInit(): void {
@@ -38,13 +38,13 @@ export class CarritoComponentComponent implements OnInit {
   //Eliminar producto del carrito
   eliminarProductoDelCarrito(id: number) {
     this.productosEnCarrito = this.productosEnCarrito.filter(producto => producto.id !== id);
-    this.actualizarCarrito(); // Actualiza el carrito en localStorage
+    this.actualizarCarrito();
   }
 
   //Vaciar el carrito
   vaciarCarrito() {
     this.productosEnCarrito = [];
-    this.actualizarCarrito(); // Actualiza el carrito en localStorage
+    this.actualizarCarrito();
   }
 
   // Calcular el total del carrito

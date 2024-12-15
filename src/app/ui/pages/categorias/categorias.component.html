@@ -1,25 +1,18 @@
 <app-header></app-header>
 <div class="form-container">
-    <form (ngSubmit)="crearCategoria()" class="formulario">
-      <h2>{{globalText.createNewCategory}}</h2>
-      <div class="form-group">
-        <label for="nombre">{{globalText.nameCategory}}</label>
-        <input
-          id="nombre"
-          type="text"
-          [(ngModel)]="nuevaCategoria.nombre"
-          name="nombre"
-          required
-          class="input-text"
-        />
-      </div>
-      <button type="submit" class="btn-crear">{{globalText.createCategory}}</button>
-    </form>
-  
-    <!-- Mostrar el mensaje de error -->
-    <div *ngIf="errorMensaje" class="error">
-      {{ errorMensaje }}
+  <form (ngSubmit)="crearCategoria()" class="formulario">
+    <h2>{{globalText.createNewCategory}}</h2>
+    <div class="form-group">
+      <label for="nombre">{{globalText.nameCategory}}</label>
+      <input id="nombre" type="text" [(ngModel)]="nuevaCategoria.nombre" name="nombre" required class="input-text" />
     </div>
+    <button type="submit" class="btn-crear">{{globalText.createCategory}}</button>
+  </form>
+
+  <!-- Mostrar el mensaje de error -->
+  <div *ngIf="errorMensaje" class="error">
+    {{ errorMensaje }}
   </div>
-  
-  <app-footer></app-footer>
+</div>
+
+<app-footer></app-footer>

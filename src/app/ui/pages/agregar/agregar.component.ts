@@ -22,32 +22,32 @@ export class AgregarComponent {
   descripcion: string = '';
   precio: number = 0;
   stock: number = 0;
-  idCategoria: any; // Este valor se llenará con la selección del usuario
+  idCategoria: any;
   arrayCategorias: any[] = []; // Array para almacenar las categorías
 
 
   constructor(
     public urlNavigateSerice: UrlNavigateService,
     public globalText: GlobalText,
-    public router:Router,
+    public router: Router,
     public serviceProduct: ProductosService
-  ){
+  ) {
     const navegabilidad = this.router.getCurrentNavigation();
 
     if (navegabilidad && navegabilidad.extras && navegabilidad.extras.state) {
       const data = navegabilidad.extras.state;
       this.idCategoria = data['idCategoria'];
 
-      
-      
+
+
     }
     this.serviceProduct.getProductoById(this.idCategoria).subscribe((result) => {
-      this.arrayCategorias  = result;
+      this.arrayCategorias = result;
     });
   }
 
 
-  
+
   agregarProducto() {
     if (this.nombre && this.descripcion && this.precio > 0 && this.stock >= 0 && this.idCategoria) {
       const datosProducto = {
@@ -61,7 +61,7 @@ export class AgregarComponent {
       this.serviceProduct.agregarProducto(datosProducto).subscribe(
         (response) => {
           console.log('Producto agregado exitosamente:', response);
-          // Opcional: redirigir al usuario a otra página o mostrar un mensaje de éxito
+
           alert('Producto agregado exitosamente');
           this.router.navigate(['/']); // Redirigir al index
         },

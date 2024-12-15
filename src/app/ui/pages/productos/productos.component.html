@@ -1,4 +1,4 @@
-<app-header/>
+<app-header />
 
 <div class="center">
   <div id="contenido">
@@ -23,15 +23,15 @@
           <span class="precio-prod">{{globalText.price + ':'}} {{producto.precio}}</span><br />
           <span class="stock-prod">{{globalText.stock + ':'}} {{producto.stock}}</span><br />
           <span><b>- {{globalText.category + ':'}} {{nombreCategoria}}</b></span>
-          
+
 
           <div class="button">
             <button (click)="eliminarProducto(producto.id)" class="button-eliminar">{{globalText.eliminate}}</button>
             <button (click)="navigateModificar(producto)" class="button-modificar">{{globalText.modify}}</button>
             <button (click)="agregarAlCarrito(producto)" class="button-carrito">{{globalText.addCarrito}}</button>
           </div>
-          
-          
+
+
         </article>
       </div>
     </div>
