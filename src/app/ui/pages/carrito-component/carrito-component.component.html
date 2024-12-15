@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<div *ngIf="productosEnCarrito.length > 0; else noProductos">
+  <h2>{{globalText.shoppingCart}}</h2>
+  
+  <ul>
+    <li *ngFor="let producto of productosEnCarrito">
+      <p>{{ producto.nombre }} - {{ producto.precio }}$</p>
+      <button (click)="eliminarProductoDelCarrito(producto.id)">{{globalText.eliminate}}</button>
+    </li>
+  </ul>
+  
+  <div class="total">
+    <p><strong>Total: {{ obtenerTotal() }}$</strong></p>
+  </div>
+  
+  <button (click)="vaciarCarrito()">{{globalText.emptyCart}}</button>
+</div>
+
+<ng-template #noProductos>
+  <p>{{globalText.thereAreNoProducts}}</p>
+</ng-template>
+
+<app-footer></app-footer>

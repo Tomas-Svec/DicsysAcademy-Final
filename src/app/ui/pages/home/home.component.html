@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-slider></app-slider>
+
+
+<div id="home">
+  <div class="center">
+    <div id="contenido">
+      <div id="headerContainer">
+        <h1 class="subheader">{{ globalText.ourCategories }}</h1>
+        <button (click)="navigateAgregarProducto()" class="btn-crear">{{globalText.addCategory}}</button>
+      </div>
+      <!-- Mensaje de error -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <!-- Listado de categorías -->
+      <div id="listCards" *ngIf="!errorMessage">
+        <div class="cardd" *ngFor="let categoria of arrayCategorias; let i = index">
+          <div class="image" (click)="navigateToProducts(categoria)">
+            <img src="{{categoria.image}}" alt="comida" />
+          </div>
+          <div class="contenidooo">
+            <h3>{{categoria.nombre}}</h3>
+
+            <div class="button-group">
+        <button (click)="navigateToProducts(categoria)">
+          {{globalText.SeeProducts}}
+        </button>
+        <!-- Botón de eliminar -->
+        <button (click)="eliminarCategoria(categoria.id)" class="btn-eliminar">
+          {{globalText.deleteCategory}}
+        </button>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>:</p>
+<app-footer></app-footer>
+

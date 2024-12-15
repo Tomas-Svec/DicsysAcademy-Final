@@ -1,0 +1,43 @@
+<app-header/>
+
+<div class="center">
+  <div id="contenido">
+    <div class="Productos">
+      <div class="agregar">
+        <h1>{{ 'Categoria: ' + nombreCategoria }}</h1>
+        <button (click)="navigateAgregar()" class="button-agregar">{{globalText.add}}</button>
+      </div>
+      <!-- Mostrar el mensaje de error si existe -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <!-- Mostrar productos si no hay error -->
+      <div id="listProductos" *ngIf="!errorMessage">
+        <article class="item -prod" id="article-template" *ngFor="let producto of listProdByCategoria">
+          <div class="image-wrap">
+            <img src="{{producto.imagen}}" alt="comida" />
+          </div>
+          <h2>{{producto.nombre}}</h2>
+          <div class="cont-spanProd">
+            <span class="span-cardProd">{{globalText.description + ':'}} {{producto.descripcion}}</span><br />
+          </div>
+          <span class="precio-prod">{{globalText.price + ':'}} {{producto.precio}}</span><br />
+          <span class="stock-prod">{{globalText.stock + ':'}} {{producto.stock}}</span><br />
+          <span><b>- {{globalText.category + ':'}} {{nombreCategoria}}</b></span>
+          
+
+          <div class="button">
+            <button (click)="eliminarProducto(producto.id)" class="button-eliminar">{{globalText.eliminate}}</button>
+            <button (click)="navigateModificar(producto)" class="button-modificar">{{globalText.modify}}</button>
+            <button (click)="agregarAlCarrito(producto)" class="button-carrito">{{globalText.addCarrito}}</button>
+          </div>
+          
+          
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>:</p>
+<p>:</p>
+<app-footer></app-footer>

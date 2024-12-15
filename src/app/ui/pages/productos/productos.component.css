@@ -1,0 +1,148 @@
+.center {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#contenido {
+  width: 100%;
+  min-height: 450px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.Productos h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.item-prod {
+  width: 350px; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; 
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.item-prod:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrap {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-prod .image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #000000;
+  text-align: center;
+}
+
+.cont-spanProd, .precio-prod, .stock-prod {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.precio-prod {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.stock-prod {
+  color: #2ecc71;
+}
+
+
+.button {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+  margin-top: 15px;
+}
+
+button {
+  width: 120px; 
+  height: 50px; 
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05); 
+}
+
+.button-eliminar {
+  background-color: red;
+}
+
+.button-modificar {
+  background-color: #c77222;
+}
+
+.button-carrito {
+  background-color: #28a745;
+}
+
+
+.button-agregar {
+  background-color: #6941da; 
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.button-agregar:hover {
+  background-color: #5132a5; 
+  transform: scale(1.05); 
+}
+
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.agregar {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+#listProductos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
+}
